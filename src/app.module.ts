@@ -1,14 +1,17 @@
 import { Module } from '@nestjs/common';
-import { EmpleadosController } from './empleados/empleados.controller';
-import { PeriodistasController } from './periodistas/periodistas.controller';
-import { RevistasController } from './revistas/revistas.controller';
-import { SucursalesController } from './sucursales/sucursales.controller';
-//import { RevistasController } from './revistas/revistas.controller';
-//import { SucursalesController } from './sucursales/sucursales.controller';
+import { RevistasModule } from './revistas/revistas.module';
+import { SucursalesModule } from './sucursales/sucursales.module';
+import { EmpleadosModule } from './empleados/empleados.module';
+import { PeriodistasModule } from './periodistas/periodistas.module';
 
 @Module({
-  imports: [],
-  controllers: [EmpleadosController, PeriodistasController, RevistasController, SucursalesController],
+  imports: [
+    RevistasModule,
+    EmpleadosModule,
+    SucursalesModule,
+    PeriodistasModule,
+  ],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}
